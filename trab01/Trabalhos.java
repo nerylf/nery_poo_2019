@@ -2,16 +2,13 @@ package trab01;
 
 public class Trabalhos{
     public static void main(String[] args) {
-        System.out.println("OPA");
         Garrafa garrafa1 = new Garrafa();
 
         garrafa1.cor = "Azul";
         garrafa1.litros = 2;
         garrafa1.mlRestante = 500;
-        System.out.println(garrafa1.cor);
 
         garrafa1.destampar();
-
         System.out.println(garrafa1.mlRestante);
 
         garrafa1.beber(200);
@@ -42,7 +39,7 @@ class Garrafa{
             return;
         }
         System.out.println("Tampando a garrafa");
-        estaTampada = false;
+        estaTampada = true;
     }
 
     void beber(int mlBeber){
