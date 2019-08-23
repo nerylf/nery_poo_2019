@@ -3,14 +3,30 @@ import java.util.Scanner;
 class Peixe{
     int barriga = 0;
     int maxBarriga = 100;
+    boolean isAlive = true;
 
     void alimentar(int qtdAlimento){
-        barriga += qtdAlimento;        
-    }   
+        if (isAlive){
+            System.out.println("OBAA!!");
+            barriga += qtdAlimento;        
 
+            if (barriga > maxBarriga){
+                System.out.println("O PEIXE EXPLODIU!!!!");
+                isAlive = false;            
+            }
+        }
+    }
     void esperar(int tempo){
-        System.out.println("EGUA!!");
-        barriga -= (tempo * 5);        
+        if (isAlive){
+            System.out.println("EGUA!!");
+            barriga -= (tempo * 5);
+            
+            if (barriga < 0){
+                System.out.println("O PEIXE MORREU DE FOME!!!");     
+                isAlive = false;   
+            }   
+            
+        }
     }
 
     void showStatus(){
@@ -24,17 +40,8 @@ public class Controller{
         Scanner scanner = new Scanner(System.in);
         Peixe nemo = new Peixe();
 
-        while(true){
-            if (nemo.barriga < 0){
-                nemo.showStatus();
-                System.out.println("O PEIXE MORREU DE FOME!!!");
-                break;
-            } else if (nemo.barriga > nemo.maxBarriga){
-                nemo.showStatus();
-                System.out.println("O PEIXE EXPLODIU!!!!");
-                break;
-            }
-
+        while(nemo.isAlive){
+            
             System.out.println("feed qtd; wait h; show");
             String line = scanner.nextLine();
 
