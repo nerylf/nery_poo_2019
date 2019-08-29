@@ -73,6 +73,13 @@ class Aluno{
             return;
         } 
     }
+    void trancarCurso(){
+        saudeMental += 200;
+        saudeFisica += 200;
+        vidaSocial += 200; 
+
+        eBolsista = false;
+    }
 }
 
 public class Controller{
@@ -86,13 +93,19 @@ public class Controller{
         aluno1.nome = scanner.nextLine();
 
         while (aluno1.estaVivo){
-            System.out.println("status; bolsa; faltar; estudar h; proc h");
+            System.out.println("status; bolsa; faltar; estudar h; proc h; trancar");
 
             line = scanner.nextLine();
             ui = line.split(" ");
 
-            if (ui[0].equals("exit"))
+            if (ui[0].equals("trancar")){
+                aluno1.trancarCurso();
+                aluno1.showStatus();
+
+                System.out.println("Parabens, zerou a vida!");
+
                 break;
+            }
 
             if (ui[0].equals("status"))
                 aluno1.showStatus();
