@@ -2,35 +2,28 @@ package mainpack;
 
 public class Lapiseira{
     String marca;
+    Double ponta; 
     int maxGraf;
     Grafite grafite;
 
-    Lapiseira(String marca, int maxGraf){
+    Lapiseira(String marca, Double ponta, int maxGraf){
         this.marca = marca;
         this.maxGraf = maxGraf;
+        this.grafite = null;
     }
 
     public void escrever(){
         if(grafite == null) {
+            System.out.println("Nao tem grafite seu safado!!");
             return; 
         }
+
+        System.out.println("ESCREVENDO");
     }
 
     public void colocarGrafite(Grafite grafite){
         this.grafite = grafite;
     }
-
-    public Double getTamGraf(){
-        if(grafite == null) {
-            return; 
-        }
-        return grafite.tamanho;
-    }
-
-	public Lapiseira(String marca, int maxGraf) {
-		this.marca = marca;
-		this.maxGraf = maxGraf;
-	}
 
 	public String getMarca() {
 		return marca;
