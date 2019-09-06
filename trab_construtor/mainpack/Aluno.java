@@ -28,7 +28,7 @@ public class Aluno{
     void showStatus(){
         System.out.println("--------------------------\n" + nome);
         if (curso != null)
-            System.out.println("Curso: " + curso.getName());
+            System.out.println("Curso: " + curso.getName() + ", Dif: " + curso.getDif() + ", Cadeiras: " + curso.getQtdCad());
         else
             System.out.println("Curso: Vagabundo");
             
