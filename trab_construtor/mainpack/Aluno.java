@@ -1,5 +1,7 @@
 package mainpack;
 
+import java.util.ArrayList;
+
 public class Aluno{
     String nome;
     Curso curso;
@@ -10,25 +12,38 @@ public class Aluno{
     int rendimento = 0;
     boolean eBolsista;
     boolean estaVivo = true;
+    ArrayList<Cadeira> cadeiras = new ArrayList<Cadeira>();
 
     public Aluno(String nome){
         this.nome = nome;
                
     }
 
+    void addCadeira(Cadeira cadeira){
+        cadeiras.add(cadeira);
+    }
+
+    void rmCadeira(String nome){
+        for (Cadeira cad : cadeiras){
+            if (cad.nome == nome)
+                cadeiras.remove(cad);
+        }
+
+    }
+
     void setCurso(Curso curso){
         this.curso = curso;
 
-        this.saudeMental = 100 - (5 * (curso.getDif() + curso.getQtdCad()));
+        this.saudeMental = 100 - (5 * (curso.getDif()));
         this.saudeFisica = 100 - (10 * curso.getDif());
-        this.vidaSocial = 100 - (15 * curso.getQtdCad());
+        this.vidaSocial = 100 - (15);
         this.rendimento = 30 - (10 * curso.getDif());
     }
 
     void showStatus(){
         System.out.println("--------------------------\n" + nome);
-        if (curso != null)
-            System.out.println("Curso: " + curso.getName() + ", Dif: " + curso.getDif() + ", Cadeiras: " + curso.getQtdCad());
+        if (curso != null && cadeiras != null)
+            System.out.println("Curso: " + curso.getName() + ", Dif: " + curso.getDif() + ", Cadeiras: " + cadeiras.size());
         else
             System.out.println("Curso: Vagabundo");
             

@@ -3,12 +3,11 @@ package mainpack;
 public class Curso{
     String nomeCurso;
     int dificuldade;
-    int qtdCadeiras;
+    
 
-    public Curso(String nomeCurso, int dificuldade, int qtdCadeiras){
+    public Curso(String nomeCurso, int dificuldade){
         this.nomeCurso = nomeCurso;
         this.dificuldade = dificuldade;
-        this.qtdCadeiras = qtdCadeiras;
     }
 
     String getName(){
@@ -17,9 +16,5 @@ public class Curso{
 
     int getDif(){
         return dificuldade;
-    }
-
-    int getQtdCad(){
-        return qtdCadeiras;
     }
 }

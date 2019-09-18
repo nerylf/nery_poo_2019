@@ -14,8 +14,9 @@ public class Controller{
         
         Aluno aluno1 = new Aluno(line);
 
-        while (aluno1.estaVivo){
-            System.out.println("curso n d q; status; bolsa; faltar; estudar h; proc h; trancar; beber");
+        while (aluno1.estaVivo){    
+            System.out.println("-------------------------------------------------------");
+            System.out.println("    curso n d; status; bolsa; faltar; \n     estudar h; proc h; trancar; beber; \n     addCad n h; rmCad n");
 
             line = scanner.nextLine();
             ui = line.split(" ");
@@ -28,7 +29,7 @@ public class Controller{
             }
 
             if (ui[0].equals("curso")){
-                Curso curso = new Curso(ui[1], Integer.parseInt(ui[2]), Integer.parseInt(ui[3]));
+                Curso curso = new Curso(ui[1], Integer.parseInt(ui[2]));
                 aluno1.setCurso(curso);
             }
 
@@ -49,6 +50,15 @@ public class Controller{
 
             if (ui[0].equals("proc"))
                 aluno1.procrastinar(Integer.parseInt(ui[1]));
+
+            if (ui[0].equals("addCad")){
+                Cadeira cadeira = new Cadeira(ui[1], Integer.parseInt(ui[2]));
+                System.out.println(cadeira);
+                aluno1.addCadeira(cadeira);
+            }
+            if (ui[0].equals("rmCad")){
+                aluno1.rmCadeira(ui[1]);
+            }
             
             aluno1.checkStatus();        
 
