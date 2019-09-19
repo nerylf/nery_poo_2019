@@ -25,7 +25,8 @@ public class Aluno{
 
     void rmCadeira(String nome){
         for (Cadeira cad : cadeiras){
-            if (cad.nome == nome)
+            System.out.println(cad.nome);
+            if (cad.getNome().equals(nome))
                 cadeiras.remove(cad);
         }
 

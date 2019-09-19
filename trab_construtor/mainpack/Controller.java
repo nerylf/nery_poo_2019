@@ -15,8 +15,9 @@ public class Controller{
         Aluno aluno1 = new Aluno(line);
 
         while (aluno1.estaVivo){    
+            //System.out.println(aluno1.cadeiras.get(0).nome);
             System.out.println("-------------------------------------------------------");
-            System.out.println("    curso n d; status; bolsa; faltar; \n     estudar h; proc h; trancar; beber; \n     addCad n h; rmCad n");
+            System.out.println("     curso n d; status; bolsa; faltar; \n     estudar h; proc h; trancar; beber; \n     addCad n h; rmCad n");
 
             line = scanner.nextLine();
             ui = line.split(" ");
@@ -55,6 +56,7 @@ public class Controller{
                 Cadeira cadeira = new Cadeira(ui[1], Integer.parseInt(ui[2]));
                 System.out.println(cadeira);
                 aluno1.addCadeira(cadeira);
+                System.out.println(aluno1.cadeiras.get(0).nome);
             }
             if (ui[0].equals("rmCad")){
                 aluno1.rmCadeira(ui[1]);
