@@ -45,8 +45,13 @@ public abstract class Conta{
         this.saldo += valor;
     }
 
-    protected void sacar(double valor){
+    protected boolean sacar(double valor){
+        if (this.saldo - valor < 0 ){
+            System.out.println("Sem saldo meu jovem!");
+            return false;
+        }
         this.saldo -= valor;
+        return true;
     }
 
 }

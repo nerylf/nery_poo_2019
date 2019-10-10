@@ -42,8 +42,8 @@ public class Agencia{
     }
 
     public void transferir(int index1, int index2, double valor){
-        listaConta.get(index1).sacar(valor);
-        listaConta.get(index2).depositar(valor);
+        if (listaConta.get(index1).sacar(valor))
+            listaConta.get(index2).depositar(valor);
     }
 
     public void update(){
