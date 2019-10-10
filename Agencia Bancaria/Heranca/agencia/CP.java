@@ -10,4 +10,10 @@ public class CP extends Conta{
     void update(){
         
     }
+
+    @Override
+    public String toString() {
+        String out = super.toString() + " : CP";
+        return out;
+    }
 }

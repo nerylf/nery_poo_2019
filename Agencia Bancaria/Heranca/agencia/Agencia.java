@@ -17,11 +17,13 @@ public class Agencia{
 
     void addCliente(Cliente cliente){
         CC cc = new CC(index, 0);
+        cc.setCliente(cliente);
         cliente.addContas(cc);
         listaConta.add(cc);
         index ++;
         
         CP cp = new CP(index, 0);
+        cp.setCliente(cliente);
         listaConta.add(cp);
         cliente.addContas(cp);
         index ++;
@@ -33,8 +35,11 @@ public class Agencia{
 
 	@Override
 	public String toString() {
-        String out = "";
+        String out = "";        
         
+        for (Conta conta : listaConta){
+            out += "[ " + conta.toString() + " ]\n";
+        }           
 		return out;
 	}
 

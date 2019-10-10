@@ -18,11 +18,14 @@ public class Controller{
             ui = line.split(" ");
             
             switch(ui[0]){
-                case "addCliente":
+                case "add":
                     ag.addCliente(new Cliente(ui[1]));
                     break;
                 case "exit":                    
                     run = false;
+                    break;
+                case "show":
+                    System.out.println(ag.toString());
                     break;
                 default:
                     System.out.println("Comando Invalido!");

@@ -18,4 +18,8 @@ public class Cliente{
     public String getId() {
         return id;
     }
+
+    public ArrayList<Conta> getContas() {
+        return contas;
+    }
 }

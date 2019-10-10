@@ -11,4 +11,9 @@ public class CC extends Conta{
         
     }
 
+    @Override
+    public String toString() {
+        String out = super.toString() + " : CC";
+        return out;
+    }
 }

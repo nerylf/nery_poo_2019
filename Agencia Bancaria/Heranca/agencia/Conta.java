@@ -3,7 +3,7 @@ package agencia;
 public abstract class Conta{
 
     double saldo;
-    String idCliente;
+    Cliente cliente;
     int id;
 
     Conta(int id, double saldo){
@@ -21,20 +21,29 @@ public abstract class Conta{
         this.saldo = saldo;
     }
 
-    public String getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        String out = "";
+
+        out += this.id + " : " + this.cliente.getId() + " : " + this.saldo;
+
+        return out;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 }
