@@ -8,6 +8,7 @@ public class CC extends Conta{
 
     @Override
     void update(){
+        this.saldo -= 20;
         
     }
 

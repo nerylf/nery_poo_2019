@@ -16,11 +16,6 @@ public abstract class Conta{
     public double getSaldo() {
         return saldo;
     }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     public int getId() {
         return id;
     }
@@ -33,7 +28,7 @@ public abstract class Conta{
     public String toString() {
         String out = "";
 
-        out += this.id + " : " + this.cliente.getId() + " : " + this.saldo;
+        out += this.id + " : " + this.cliente.getId() + " : R$ " + this.saldo;
 
         return out;
     }
@@ -44,6 +39,14 @@ public abstract class Conta{
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    protected void depositar(double valor){
+        this.saldo += valor;
+    }
+
+    protected void sacar(double valor){
+        this.saldo -= valor;
     }
 
 }

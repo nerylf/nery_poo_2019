@@ -33,6 +33,25 @@ public class Agencia{
         System.out.println("" + cliente.getId() + " cadastrado!");
     }
 
+    public void depositar(int index, double valor){
+        listaConta.get(index).depositar(valor);
+    }
+
+    public void sacar(int index, double valor){
+        listaConta.get(index).sacar(valor);
+    }
+
+    public void transferir(int index1, int index2, double valor){
+        listaConta.get(index1).sacar(valor);
+        listaConta.get(index2).depositar(valor);
+    }
+
+    public void update(){
+        for(Conta conta : listaConta){
+            conta.update();
+        }
+    }
+
 	@Override
 	public String toString() {
         String out = "";        

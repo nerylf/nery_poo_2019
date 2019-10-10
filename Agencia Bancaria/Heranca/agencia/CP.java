@@ -8,7 +8,7 @@ public class CP extends Conta{
 
     @Override
     void update(){
-        
+        this.saldo += (this.saldo) * 0.02;
     }
 
     @Override
