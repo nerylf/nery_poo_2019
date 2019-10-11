@@ -46,7 +46,7 @@ public abstract class Conta{
     }
 
     protected boolean sacar(double valor){
-        if (this.saldo - valor < 0 ){
+        if (valor > this.saldo){
             System.out.println("Sem saldo meu jovem!");
             return false;
         }
