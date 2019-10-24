@@ -39,7 +39,9 @@ public class Controller{
                 case "mat":
                     for (Aluno a : escola.getListAlu()){
                         if (a.getId().equals(ui[1])){
-                            
+                            for (int i = 2; i < ui.length; i ++){
+                                a.addDisc(new Disc(ui[i]));
+                            }
                         }
                     }
                     break;
