@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Controller",
+            "request": "launch",
+            "mainClass": "Controller",
+            "projectName": "Twitter_d759e6f6"
+        }
+    ]
+}
