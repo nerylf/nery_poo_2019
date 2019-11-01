@@ -9,7 +9,7 @@ public class Repositorio<K, T>{
     String nametype;
 
     public Repositorio() {
-        this.nametype = nametype;
+        //this.nametype = nametype;
         this.data = new TreeMap<K, T>();
     }
 
@@ -40,7 +40,20 @@ public class Repositorio<K, T>{
 		for(K key : data.keySet())
 			out.add(data.get(key));
 		return out;
-	}
+    }
+
+    @Override
+    public String toString() {
+        String out = "";
+
+        for (K k : data.keySet()){
+            out += data.get(k);
+        }
+        out += "";
+        return out;
+    }
+    
+    
 
 
 }
